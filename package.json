@@ -1,0 +1,22 @@
+{
+  "private": false,
+  "name": "@adyen/threeds2-js-utils",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dist/ && webpack --config webpack.config.js",
+    "test": "BABEL_ENV=test jest --watchAll --config jest.config.js"
+  },
+  "eslintIgnore": [
+    "build/*",
+    "dist/*"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "jest": "^24.0.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
