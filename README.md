@@ -3,7 +3,7 @@
 These utilities are helper functions to get 3DS 2.0 integrated on to your webpage.
 
 ## Requirements
-3DS 2.0 Back-end integration with Adyen: https://docs.adyen.com/developers/risk-management/3d-secure-2/server-integration
+3DS 2.0 Back-end integration with Adyen:  https://docs.adyen.com/developers/risk-management/3d-secure-2/browser-based-integration/
 
 ## Installation
 
