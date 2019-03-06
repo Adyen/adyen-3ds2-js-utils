@@ -1,0 +1,10 @@
+node_modules
+/coverage
+/.idea
+/*.log
+.idea
+.env
+.idea/
+
+.DS_Store
+stats.json
