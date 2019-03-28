@@ -4,13 +4,13 @@ describe('retrieving browser info from browser should', () => {
 
     test('match expected elements', () => {
         expect(collectBrowserInfo()).toMatchObject({
-            browserColorDepth: expect.any(Number),
-            browserJavaEnabled: expect.any(Boolean),
-            browserLanguage: expect.any(String),
-            browserScreenHeight: expect.any(Number),
-            browserScreenWidth: expect.any(Number),
-            browserTZ: expect.any(Number),
-            browserUserAgent: expect.any(String)
+            colorDepth: expect.any(Number),
+            javaEnabled: expect.any(Boolean),
+            language: expect.any(String),
+            screenHeight: expect.any(Number),
+            screenWidth: expect.any(Number),
+            timeZoneOffset: expect.any(Number),
+            userAgent: expect.any(String)
         });
     });
 });
