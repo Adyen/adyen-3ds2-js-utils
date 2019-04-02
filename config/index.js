@@ -16,7 +16,8 @@ export const challengeWindowSizes = {
  * @returns {string} - a valid size string
  */
 export function validateChallengeWindowSize(sizeStr){
-    return (challengeWindowSizes.hasOwnProperty(sizeStr)) ? sizeStr : '01';
+    let sizeString = (sizeStr.length === 1)? `0${sizeStr}` : sizeStr;
+    return (challengeWindowSizes.hasOwnProperty(sizeString)) ? sizeString : '01';
 }
 
 /**
