@@ -3,7 +3,7 @@
 These utilities are helper functions to get 3DS 2.0 integrated on to your webpage.
 
 ## Requirements
-3DS 2.0 Back-end integration with Adyen:  https://docs.adyen.com/developers/risk-management/3d-secure-2/browser-based-integration
+3DS 2.0 Back-end integration with Adyen:  https://docs.adyen.com/classic-integration/3d-secure-2-classic-integration/browser-based-integration/
 
 ## Installation
 
@@ -163,7 +163,7 @@ const windowSizesArray = config.getChallengeWindowSize('STRING');
 ```
 
 ## Documentation
-[3DS 2.0 Helper Functions Implementation](https://docs.adyen.com/developers/risk-management/3d-secure-2/browser-based-integration/3d-secure-2-helper-functions "Documentation")
+[3DS 2.0 Helper Functions Implementation](https://docs.adyen.com/3d-secure-2-and-checkout-api/checkout-api-helper-functions/ "Documentation")
 
 ## Support
 You can open tickets for any issues with the helper functions. In case of specific problems with your account or generic 3DS 2.0 issues and questions, please contact
