@@ -16,8 +16,8 @@ const encodeBase64URL = (dataStr) => {
     let base64 = window.btoa(dataStr);
     let base64url = base64.split('=')[0]; // Remove any trailing '='s
 
-    base64url = base64url.replace('/\+/g', '-'); // 62nd char of encoding
-    base64url = base64url.replace('/\//g', '_'); // 63rd char of encoding
+    base64url = base64url.replace(/\+/g, '-'); // 62nd char of encoding
+    base64url = base64url.replace(/\//g, '_'); // 63rd char of encoding
 
     return base64url;
 };
@@ -37,8 +37,8 @@ const encodeBase64URL = (dataStr) => {
  */
 const decodeBase64URL = (str) => {
     let base64 = str;
-    base64 = base64.replace('/-/g', '+'); // 62nd char of encoding
-    base64 = base64.replace('/_/g', '/'); // 63rd char of encoding
+    base64 = base64.replace(/-/g, '+'); // 62nd char of encoding
+    base64 = base64.replace(/_/g, '/'); // 63rd char of encoding
     switch (base64.length % 4) // Pad with trailing '='s
     {
         case 0:

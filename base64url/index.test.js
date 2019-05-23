@@ -21,3 +21,13 @@ describe('base64 URL decoding', () => {
         });
     });
 });
+
+describe('base64 URL encoding', () => {
+    test('replaces the plus character from a base64 URL string', () => {
+        expect(base64URL.encode('https://www.adyen.com/our+solution/online+payments')).toBe('aHR0cHM6Ly93d3cuYWR5ZW4uY29tL291citzb2x1dGlvbi9vbmxpbmUrcGF5bWVudHM');
+    });
+
+    test('replaces slashes in a base64 URL string', () => {
+        expect(base64URL.encode('https://www.adyen.com/our_solution//online_payments')).toBe('aHR0cHM6Ly93d3cuYWR5ZW4uY29tL291cl9zb2x1dGlvbi8vb25saW5lX3BheW1lbnRz');
+    });
+});
