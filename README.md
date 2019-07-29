@@ -37,7 +37,7 @@ window.ThreedDS2Utils
 ```
 e.g.
 ```javascript
-window.ThreedDS2Utils.collectBrowserInfo()
+window.ThreedDS2Utils.getBrowserInfo()
 ```
 
 ## Usage
@@ -76,7 +76,7 @@ base64Url.encode
 returns a base64URL encoded string
 ```javascript
 base64Url.decode
-``` 
+```
 returns a base64URL decoded string
 
 ```javascript
@@ -104,9 +104,9 @@ Creates an ```iframe``` of specified size element with an ```onload``` listener 
  * @returns {Element} - Created iframe element
  */
 const iframe = createIframe(
-    container, 
-    'IFRAME_NAME', 
-    '400', 
+    container,
+    'IFRAME_NAME',
+    '400',
     '600'
 );
 ```
@@ -126,10 +126,10 @@ Creates a ```form``` element with a ```target``` attribute
  */
 
 const form = createForm(
-    'FORM_ELEMENT NAME', 
-    "FORM_ACTION", 
-    "TARGET_NAME", 
-    "INPUT_ELEMENT_NAME", 
+    'FORM_ELEMENT NAME',
+    "FORM_ACTION",
+    "TARGET_NAME",
+    "INPUT_ELEMENT_NAME",
     "DATA_TO_POST");
 ```
 
@@ -147,7 +147,7 @@ returns an array of pixel values based on the validated challenge window size e.
 
 ```javascript
 /**
- * @function config.validateChallengeWindowSize 
+ * @function config.validateChallengeWindowSize
  * @param sizeStr - a size string to confirm as valid
  * @returns {String} - a valid size string
  */
@@ -155,7 +155,7 @@ const validWindowSize = config.validateChallengeWindowSize('STRING');
 ```
 ```javascript
 /**
- * @function config.getChallengeWindowSize 
+ * @function config.getChallengeWindowSize
  * @param sizeStr - a size string to confirm as valid
  * @returns {array} - an array of values [WIDTH, HEIGHT]
  */
