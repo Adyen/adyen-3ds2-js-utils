@@ -1,16 +1,16 @@
-const configObject = {};
+var configObject = {};
 configObject.container = void 0;
 
-const addIframeListener = (iframe, callback) => {
-    if (iframe.attachEvent){
+var addIframeListener = function addIframeListener(iframe, callback) {
+    if (iframe.attachEvent) {
         // IE fallback
-        iframe.attachEvent("onload", function(){
+        iframe.attachEvent("onload", function () {
             if (callback && typeof callback === "function") {
                 callback(iframe.contentWindow);
             }
         });
     } else {
-        iframe.onload = function(){
+        iframe.onload = function () {
             if (callback && typeof callback === "function") {
                 callback(iframe.contentWindow);
             }
@@ -31,34 +31,33 @@ const addIframeListener = (iframe, callback) => {
  *
  * @returns {Element} - Created iframe element
  */
-const createIframe = (container, name, width = '0', height = '0', callback) => {
-    if (!name || name.length === 0){
-        throw new Error('Name parameter missing for iframe');
-    }
+var createIframe = function createIframe(container, name) {
+    var width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '0';
+    var height = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '0';
+    var callback = arguments.length > 4 ? arguments[4] : undefined;
 
-    // Resolve holding element for generated iframe else default to body
+    if (!name || name.length === 0) {
+        throw new Error('Name parameter missing for iframe');
+    } // Resolve holding element for generated iframe else default to body
+
+
     if (container instanceof HTMLElement) {
         configObject.container = container;
     } else {
         configObject.container = document.body;
     }
 
-    const iframe = document.createElement('iframe');
-
+    var iframe = document.createElement('iframe');
     iframe.classList.add(name + 'Class');
     iframe.width = width;
     iframe.height = height;
     iframe.name = name;
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('border', '0');
-
-    const noIframeElContent = document.createTextNode('<p>Your browser does not support iframes.</p>');
+    var noIframeElContent = document.createTextNode('<p>Your browser does not support iframes.</p>');
     iframe.appendChild(noIframeElContent);
-
     configObject.container.appendChild(iframe);
-
     addIframeListener(iframe, callback);
-
     return iframe;
 };
 
