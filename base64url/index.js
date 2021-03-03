@@ -12,11 +12,12 @@
  *
  * @returns base64url {String} : a base64url encoded string
  */
-const encodeBase64URL = (dataStr) => {
-    let base64 = window.btoa(dataStr);
-    let base64url = base64.split('=')[0]; // Remove any trailing '='s
+var encodeBase64URL = function encodeBase64URL(dataStr) {
+    var base64 = window.btoa(dataStr);
+    var base64url = base64.split('=')[0]; // Remove any trailing '='s
 
     base64url = base64url.replace(/\+/g, '-'); // 62nd char of encoding
+
     base64url = base64url.replace(/\//g, '_'); // 63rd char of encoding
 
     return base64url;
@@ -35,22 +36,33 @@ const encodeBase64URL = (dataStr) => {
  *
  * @returns {String} - a regular string
  */
-const decodeBase64URL = (str) => {
-    let base64 = str;
+var decodeBase64URL = function decodeBase64URL(str) {
+    var base64 = str;
     base64 = base64.replace(/-/g, '+'); // 62nd char of encoding
+
     base64 = base64.replace(/_/g, '/'); // 63rd char of encoding
-    switch (base64.length % 4) // Pad with trailing '='s
-    {
+
+    switch (base64.length % 4) {
+        // Pad with trailing '='s
         case 0:
-            break; // No pad chars in this case
+            break;
+        // No pad chars in this case
+
         case 2:
-            base64 += "=="; break; // Two pad chars
+            base64 += "==";
+            break;
+        // Two pad chars
+
         case 3:
-            base64 += "="; break; // One pad char
+            base64 += "=";
+            break;
+        // One pad char
+
         default:
-            if(window.console && window.console.log){
+            if (window.console && window.console.log) {
                 window.console.log('### base64url::decodeBase64URL::  Illegal base64url string!');
             }
+
     }
 
     try {
@@ -60,8 +72,8 @@ const decodeBase64URL = (str) => {
     }
 };
 
-const base64URL = {
-    encode : encodeBase64URL,
+var base64URL = {
+    encode: encodeBase64URL,
     decode: decodeBase64URL
 };
 

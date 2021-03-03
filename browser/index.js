@@ -9,34 +9,29 @@
  *
  * @returns {Object} - browserInfo an object containing the retrieved browser properties
  */
-const collectBrowserInfo = () => {
+var collectBrowserInfo = function collectBrowserInfo() {
+    var screenWidth = window && window.screen ? window.screen.width : '';
+    var screenHeight = window && window.screen ? window.screen.height : '';
+    var colorDepth = window && window.screen ? window.screen.colorDepth : '';
+    var userAgent = window && window.navigator ? window.navigator.userAgent : '';
+    var javaEnabled = window && window.navigator ? navigator.javaEnabled() : false;
+    var language = '';
 
-    const screenWidth = window && window.screen ? window.screen.width : '';
-    const screenHeight = window && window.screen ? window.screen.height : '';
-    const colorDepth = window && window.screen ? window.screen.colorDepth : '';
-    const userAgent = window && window.navigator ? window.navigator.userAgent : '';
-    const javaEnabled = window && window.navigator ? navigator.javaEnabled() : false;
-
-    let language = '';
     if (window && window.navigator) {
-        language = window.navigator.language
-            ? window.navigator.language
-            : window.navigator.browserLanguage; // Else is for IE <+ 10
+        language = window.navigator.language ? window.navigator.language : window.navigator.browserLanguage; // Else is for IE <+ 10
     }
 
-    const d = new Date();
-    const timeZoneOffset = d.getTimezoneOffset();
-
-    const browserInfo = {
-        screenWidth,
-        screenHeight,
-        colorDepth,
-        userAgent,
-        timeZoneOffset,
-        language,
-        javaEnabled,
+    var d = new Date();
+    var timeZoneOffset = d.getTimezoneOffset();
+    var browserInfo = {
+        screenWidth: screenWidth,
+        screenHeight: screenHeight,
+        colorDepth: colorDepth,
+        userAgent: userAgent,
+        timeZoneOffset: timeZoneOffset,
+        language: language,
+        javaEnabled: javaEnabled
     };
-
     return browserInfo;
 };
 

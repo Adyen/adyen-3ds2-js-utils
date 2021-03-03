@@ -11,8 +11,7 @@
  *
  * @returns {Element} - Created form element
  */
-const createForm = (name, action, target, inputName, inputValue) => {
-
+var createForm = function createForm(name, action, target, inputName, inputValue) {
     if (!name || !action || !target || !inputName || !inputValue) {
         throw new Error('Not all required parameters provided for form creation');
     }
@@ -21,16 +20,16 @@ const createForm = (name, action, target, inputName, inputValue) => {
         throw new Error('Not all required parameters have suitable values');
     }
 
-    const form = document.createElement( 'form' );
+    var form = document.createElement('form');
     form.style.display = 'none';
     form.name = name;
     form.action = action;
-    form.method = "POST";
+    form.method = 'POST';
     form.target = target;
-    const input = document.createElement( 'input' );
+    var input = document.createElement('input');
     input.name = inputName;
     input.value = inputValue;
-    form.appendChild( input );
+    form.appendChild(input);
     return form;
 };
 
