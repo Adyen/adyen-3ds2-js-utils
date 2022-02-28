@@ -28,6 +28,7 @@ const collectBrowserInfo = () => {
     const timeZoneOffset = d.getTimezoneOffset();
 
     const browserInfo = {
+        acceptHeader: '*/*',
         screenWidth,
         screenHeight,
         colorDepth,

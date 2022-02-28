@@ -4,6 +4,7 @@ describe('retrieving browser info from browser should', () => {
 
     test('match expected elements', () => {
         expect(collectBrowserInfo()).toMatchObject({
+            acceptHeader: expect.any(String),
             colorDepth: expect.any(Number),
             javaEnabled: expect.any(Boolean),
             language: expect.any(String),

@@ -65,7 +65,8 @@ This returns an object with the following keys:
     userAgent,
     timeZoneOffset,
     language,
-    javaEnabled
+    javaEnabled,
+    acceptHeader
 }
 ```
 
